@@ -28,6 +28,16 @@ public class ParoquiaServiceImpl implements IParoquiaService{
 		// TODO Auto-generated method stub
 		return dao.findById(id).orElse(null);
 	}
+	@Override
+	public Paroquia adicionarParoquia(Paroquia novaParoquia) {
+		// TODO Auto-generated method stub
+		return dao.save(novaParoquia);
+	}
+	@Override
+	public Paroquia atualizarParoquia(Paroquia paroquia) {
+		// TODO Auto-generated method stub
+		return dao.save(paroquia);
+	}
 	
 
 }

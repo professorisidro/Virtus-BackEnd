@@ -12,5 +12,8 @@ public interface IParoquiaService {
 	public Page<Paroquia> getParoquiasPorCidade(Cidade c, int pagina);
 
 	public Paroquia getParoquiaPeloId(int i);
+	
+	public Paroquia adicionarParoquia(Paroquia novaParoquia);
+	public Paroquia atualizarParoquia(Paroquia paroquia);
 
 }

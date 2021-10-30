@@ -6,6 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +37,25 @@ public class ParoquiaController {
 			return ResponseEntity.ok(p);
 		}
 		return ResponseEntity.notFound().build();
+	}
+	
+	@PostMapping("/paroquias")
+	public ResponseEntity<Paroquia> adicionarNova(@RequestBody Paroquia nova){
+		Paroquia res = service.adicionarParoquia(nova);
+		if (res != null) {
+			return ResponseEntity.status(201).body(res);
+		}
+		return ResponseEntity.badRequest().build();
+	}
+	
+	
+	@PutMapping("/paroquias")
+	public ResponseEntity<Paroquia> atualizarParoquia(@RequestBody Paroquia atual){
+		Paroquia res = service.adicionarParoquia(atual);
+		if (res != null) {
+			return ResponseEntity.ok(res);
+		}
+		return ResponseEntity.badRequest().build();
 	}
 
 }
