@@ -32,5 +32,14 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         source: "./target/virtus-0.0.1-SNAPSHOT.jar"
         target: "/root/virtus"
+        
+    - name: Executando Script de Deploy na VM Remota
+      uses: appleboy/ssh-action@master
+      with: 
+         host: cloud.professorisidro.com.br
+         port: 22
+         username: root
+         password: ${{ secrets.PASSWORD }}
+         script: /root/deployvirtusback.sh
       
     
