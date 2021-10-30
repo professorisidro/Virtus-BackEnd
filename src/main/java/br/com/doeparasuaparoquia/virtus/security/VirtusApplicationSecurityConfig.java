@@ -19,8 +19,8 @@ public class VirtusApplicationSecurityConfig extends WebSecurityConfigurerAdapte
 				    // requisicoes liberadas
 				    .antMatchers(HttpMethod.GET, "/paroquias/*").permitAll()
 				    .antMatchers(HttpMethod.GET, "/paroquias*").permitAll()
-				    .antMatchers(HttpMethod.GET, "/estados/*").permitAll()
-				    .antMatchers(HttpMethod.GET, "/cidades/*").permitAll()
+				    .antMatchers(HttpMethod.GET, "/estados*").permitAll()
+				    .antMatchers(HttpMethod.GET, "/cidades*").permitAll()
 				    .antMatchers(HttpMethod.POST, "/login").permitAll()
 				    // demais requisiçoes tem que ser autenticadas
 				    .anyRequest().authenticated().and().cors();
