@@ -30,6 +30,7 @@ public class CidadeController {
 		return ResponseEntity.notFound().build();
 	}
 	
+	
 	@GetMapping("/cidades")
 	public ResponseEntity<List<Cidade>> recuperarPeloEstado(@RequestParam(name="estado") int estado){
 		Estado e = new Estado();
